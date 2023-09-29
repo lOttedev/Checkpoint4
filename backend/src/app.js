@@ -23,7 +23,7 @@ app.use(
 );
 
 // import and mount the API routes
-const authRouter = require("./routes/auth.route");
+const authRouter = require("./routes/auth.routes");
 const userRouter = require("./routes/user.routes");
 const guitaresRouter = require("./routes/guitares.routes");
 

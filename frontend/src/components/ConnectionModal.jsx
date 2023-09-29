@@ -20,7 +20,7 @@ function ModalConnection() {
 
     if (fields.mailConnection.length && fields.passwordConnection.length) {
       axios
-        .post("/auth/sign-in", fields)
+        .post(`${import.meta.env.VITE_BACKEND_URL}/auth/sign-in`, fields)
         .then((res) => {
           setUser(res.data.id);
           localStorage.setItem("user", JSON.stringify(res.data.id));

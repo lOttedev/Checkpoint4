@@ -11,7 +11,6 @@ const signIn = async (req, res) => {
   if (!passwordVerif) return res.sendStatus(500);
 
   delete req.user.passwordConnection;
-
   const token = encodeJWT(req.user);
 
   res.cookie("auth_token", token, { httpOnly: true, secure: false });
@@ -27,7 +26,7 @@ const signUp = async (req, res) => {
       delete req.body.password;
       res.sendStatus(201);
     } else {
-      res.status(500).send("error is here");
+      res.status(500);
     }
   } catch (err) {
     console.error(err);

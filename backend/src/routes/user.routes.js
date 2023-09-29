@@ -10,7 +10,7 @@ router.get("/users", userController.browse);
 router.get("/users/:id", userController.read);
 
 router.put(
-  "/user-password/:id",
+  "/users-password/:id",
   checkUserUpdate,
   hashedPasswordUpdate,
   userController.editPassword

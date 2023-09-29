@@ -26,7 +26,7 @@ function NavBar() {
   }, []);
 
   const handleLogout = () => {
-    axios.get("/auth/logout").then((res) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/auth/logout`).then((res) => {
       if (res.status === 200) {
         localStorage.clear();
         setUser(null);

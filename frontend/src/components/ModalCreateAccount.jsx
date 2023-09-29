@@ -20,7 +20,7 @@ function ModalCreateAccount() {
 
   const onSubmit = (data) => {
     axios
-      .post("/auth/sign-up", data)
+      .post(`${import.meta.env.VITE_BACKEND_URL}/auth/sign-up`, data)
       .then(() => {
         toast.success(
           "Votre inscription a réussi. Vous pouvez vous connecter.",
