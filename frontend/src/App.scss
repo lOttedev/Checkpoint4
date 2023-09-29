@@ -267,11 +267,17 @@ html {
       }
     }
 
+    @media screen and (max-width: 600px) {
+      #connectionModal {
+        width: 80%;
+      }
+    }
+
     /******************** MODAL CREATION *************************************/
 
     #creationModal {
       background-color: var(--main-color);
-      max-width: 35vw;
+      width: 35vw;
 
       .close-modal {
         border: none;
@@ -350,6 +356,12 @@ html {
       }
     }
 
+    @media screen and (max-width: 600px) {
+      #creationModal {
+        width: 87%;
+      }
+    }
+
     /******************** HOME *************************************/
 
     .home {
@@ -413,6 +425,9 @@ html {
     @media screen and (max-width: 600px) {
       .explications {
         flex-direction: column;
+      }
+      .home .explications .exemple {
+        width: 100%;
       }
     }
 

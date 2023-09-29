@@ -117,7 +117,13 @@ function NavBar() {
             </>
           ) : (
             <li>
-              <NavLink to="/Connection">CONNECTION</NavLink>
+              <button
+                type="button"
+                onClick={openConnectionModal}
+                className="button-connection"
+              >
+                CONNECTION
+              </button>
             </li>
           )}
         </ul>
