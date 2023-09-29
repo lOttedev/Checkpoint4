@@ -609,6 +609,42 @@ html {
         transform: scale(1.05);
       }
     }
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .button-enregistrer {
+        border: var(--accent) solid;
+        color: var(--accent);
+        border-width: 1px;
+        border-radius: 5px;
+        font-size: 19px;
+        background-color: rgba(10, 0, 0, 0);
+        margin: 1em;
+        padding: 0.8em;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform 0.7s;
+      }
+      .button-connection {
+        border: var(--accent) solid;
+        color: var(--accent);
+        border-width: 1px;
+        border-radius: 5px;
+        font-size: 19px;
+        background-color: rgba(10, 0, 0, 0);
+        margin: 1em;
+        padding: 0.8em;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform 0.7s;
+      }
+      .button-connection:hover {
+        background-color: var(--accent);
+        color: var(--main-color);
+        transform: scale(1.05);
+      }
+    }
 
     @media screen and (max-width: 600px) {
       .guitare-box {

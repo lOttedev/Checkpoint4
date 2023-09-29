@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useCurrentUserContext } from "../context/useCurrentUserContext";
 import banner from "../assets/images/bannieres/TeteGuitare.webp";
 import teteAligne from "../assets/images/icones/tete-aligne.png";
 import teteFerme from "../assets/images/icones/tete-ferme.png";
@@ -20,9 +21,14 @@ import bouton4 from "../assets/images/icones/élec 4 bouton.png";
 import boutonTele from "../assets/images/icones/élec plaque tele.png";
 
 function GuitareCustom({ onCustomSelect }) {
+  const { user } = useCurrentUserContext();
   const [guitare, setGuitare] = useState([]);
   const [selectedElem, setSelectedElem] = useState("");
   const [selectedImage, setSelectedImage] = useState("");
+
+  const openConnectionModal = () => {
+    document.getElementById("connectionModal").showModal();
+  };
 
   const [customOpacities, setCustomOpacities] = useState({
     aligne: 0.5,
@@ -321,17 +327,29 @@ function GuitareCustom({ onCustomSelect }) {
           </div>
         </div>
       </div>
-      <div className="btn">
-        <Link to={`/profil/${id}`}>
+      {user ? (
+        <div className="btn">
+          <Link to={`/profil/${id}`}>
+            <button
+              type="button"
+              className="button-enregistrer"
+              onClick={handleButtonClick}
+            >
+              ENREGISTRER
+            </button>
+          </Link>
+        </div>
+      ) : (
+        <div className="btn">
           <button
             type="button"
-            className="button-enregistrer"
-            onClick={handleButtonClick}
+            onClick={openConnectionModal}
+            className="button-connection"
           >
-            ENREGISTRER
+            CONNECTION
           </button>
-        </Link>
-      </div>
+        </div>
+      )}
     </div>
   );
 }
