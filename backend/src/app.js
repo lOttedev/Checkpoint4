@@ -23,10 +23,13 @@ app.use(
 );
 
 // import and mount the API routes
+const authRouter = require("./routes/auth.route");
+const userRouter = require("./routes/user.routes");
+const guitaresRouter = require("./routes/guitares.routes");
 
-const router = require("./router");
-
-app.use(router);
+app.use("/auth", authRouter);
+app.use(userRouter);
+app.use(guitaresRouter);
 
 // serve the `backend/public` folder for public resources
 

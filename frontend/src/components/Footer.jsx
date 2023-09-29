@@ -1,7 +1,11 @@
 function Footer() {
   return (
     <div>
-      <h1>hello</h1>
+      <div className="footer">
+        <p>
+          SUGE GUITARES - 2023 | MENTIONS LÉGALES | UN SITE IMAGINÉ PAR LOTTE
+        </p>
+      </div>
     </div>
   );
 }
